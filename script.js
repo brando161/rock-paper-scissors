@@ -1,4 +1,4 @@
-for(i = 0; i < 5; i++) {
+for(i = 1; i < 6; i++) {
     const getComputerChoice = () => {
         let randomNumber = Math.floor(Math.random() *3);
         switch(randomNumber) {
@@ -16,31 +16,42 @@ for(i = 0; i < 5; i++) {
         };
     }
     
+    let playerScore = 0;
+    let computerScore = 0;
+
     const playRound = (playerSelection, computerSelection) => {
-        if (playerSelection === "Rock" && computerSelection === "Rock") {
-            return "It's a tie!"
-        } else if (playerSelection === "Rock" && computerSelection === "Paper") {
-            return "You lose! Paper beats Rock."
-        } else if (playerSelection === "Rock" && computerSelection === "Scissors") {
-            return "You win! Rock beats Scissors."
-        } else if (playerSelection === "Paper" && computerSelection === "Rock") {
-            return "You win! Paper beats Rock."
-        } else if (playerSelection === "Paper" && computerSelection === "Paper") {
-            return "It's a tie!"
-        } else if (playerSelection === "Paper" && computerSelection === "Scissors") {
-            return "You lose! Scissors beats Paper."
-        } else if (playerSelection === "Scissors" && computerSelection === "Rock") {
-            return "You lose! Rock beats Scissors."
-        } else if (playerSelection === "Scissors" && computerSelection === "Paper") {
-            return "You win! Scissors beats Paper."
-        } else if (playerSelection === "Scissors" && computerSelection === "Paper") {
-            return "It's a tie!"
+        if (playerSelection === "ROCK" && computerSelection === "ROCK") {
+            return "It's a tie!";
+        } else if (playerSelection === "ROCK" && computerSelection === "PAPER") {
+            return "You lose!";
+        } else if (playerSelection === "ROCK" && computerSelection === "SCISSORS") {
+            return "You win!";
+        } else if (playerSelection === "PAPER" && computerSelection === "ROCK") {
+            return "You win!";
+        } else if (playerSelection === "PAPER" && computerSelection === "PAPER") {
+            return "It's a tie!";
+        } else if (playerSelection === "PAPER" && computerSelection === "SCISSORS") {
+            return "You lose!";
+        } else if (playerSelection === "SCISSORS" && computerSelection === "ROCK") {
+            return "You lose!";
+        } else if (playerSelection === "SCISSORS" && computerSelection === "PAPER") {
+            return "You win!";
+        } else if (playerSelection === "SCISSORS" && computerSelection === "SCISSORS") {
+            return "It's a tie!";
         } else {
-            return "Error"
+            return "Error";
         }
     }
-    
-    const playerSelection = "Paper";
-    const computerSelection = getComputerChoice();
+
+    const playerChoice = prompt(`Round ${i}: Choose Rock, Paper, or Scissors.`, "");
+    const playerSelection = playerChoice.toUpperCase();
+    const computerSelection = getComputerChoice().toUpperCase();
+
     console.log(playRound(playerSelection, computerSelection));
+
+    console.log(`You chose ${playerSelection}`);
+    console.log(`Computer chose ${computerSelection}`);
+
+    console.log(`Your Score: ${playerScore}`);
+    console.log(`Computer's Score: ${computerScore}`);
 }
