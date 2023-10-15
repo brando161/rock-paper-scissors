@@ -1,57 +1,65 @@
-for(i = 1; i < 6; i++) {
-    const getComputerChoice = () => {
-        let randomNumber = Math.floor(Math.random() *3);
-        switch(randomNumber) {
-        case 0:
-            return "Rock";
-        break;
-    
-        case 1:
-            return "Paper";
-        break;
-    
-        case 2:
-            return "Scissors";
-        break;
-        };
-    }
-    
-    let playerScore = 0;
-    let computerScore = 0;
+let playerScore = 0;
+let computerScore = 0;
 
-    const playRound = (playerSelection, computerSelection) => {
-        if (playerSelection === "ROCK" && computerSelection === "ROCK") {
-            return "It's a tie!";
-        } else if (playerSelection === "ROCK" && computerSelection === "PAPER") {
-            return "You lose!";
-        } else if (playerSelection === "ROCK" && computerSelection === "SCISSORS") {
-            return "You win!";
-        } else if (playerSelection === "PAPER" && computerSelection === "ROCK") {
-            return "You win!";
-        } else if (playerSelection === "PAPER" && computerSelection === "PAPER") {
-            return "It's a tie!";
-        } else if (playerSelection === "PAPER" && computerSelection === "SCISSORS") {
-            return "You lose!";
-        } else if (playerSelection === "SCISSORS" && computerSelection === "ROCK") {
-            return "You lose!";
-        } else if (playerSelection === "SCISSORS" && computerSelection === "PAPER") {
-            return "You win!";
-        } else if (playerSelection === "SCISSORS" && computerSelection === "SCISSORS") {
-            return "It's a tie!";
-        } else {
-            return "Error";
+const game = () => {
+    for(i = 1; i < 6; i++) {
+        const getComputerChoice = () => {
+            let randomNumber = Math.floor(Math.random() *3);
+            switch(randomNumber) {
+            case 0:
+                return "Rock";
+            break;
+        
+            case 1:
+                return "Paper";
+            break;
+        
+            case 2:
+                return "Scissors";
+            break;
+            };
         }
+    
+        const playRound = (playerSelection, computerSelection) => {
+            const win = (playerSelection === "ROCK" && computerSelection === "SCISSORS") || 
+            (playerSelection === "PAPER" && computerSelection === "ROCK") ||
+            (playerSelection === "SCISSORS" && computerSelection === "PAPER");
+            if(playerSelection === computerSelection) {
+                return "It's a tie!";
+            }
+            if(win) {
+                playerScore++;
+                return "You win!";
+            } else {
+                computerScore++;
+                return "You lose!";
+            }
+        }
+
+        const playerChoice = prompt(`Round ${i}: Choose Rock, Paper, or Scissors.`, "");
+        const playerSelection = playerChoice.toUpperCase();
+        const computerSelection = getComputerChoice().toUpperCase();
+    
+        console.log(playRound(playerSelection, computerSelection));
+    
+        console.log(`You chose ${playerSelection}`);
+        console.log(`Computer chose ${computerSelection}`);
     }
-
-    const playerChoice = prompt(`Round ${i}: Choose Rock, Paper, or Scissors.`, "");
-    const playerSelection = playerChoice.toUpperCase();
-    const computerSelection = getComputerChoice().toUpperCase();
-
-    console.log(playRound(playerSelection, computerSelection));
-
-    console.log(`You chose ${playerSelection}`);
-    console.log(`Computer chose ${computerSelection}`);
-
-    console.log(`Your Score: ${playerScore}`);
-    console.log(`Computer's Score: ${computerScore}`);
 }
+
+game();
+
+const finalScore = () => {
+    if(playerScore > computerScore) {
+        alert(`Congratulations, you won the game! Your score was ${playerScore} and the computer's score was ${computerScore}`);
+    } else if(playerScore === computerScore) {
+        alert(`It's a tied game! Both scores were ${playerScore}`);
+    } else {
+        alert(`You lost the game! Your score was ${playerScore} and the computer's score was ${computerScore}`);
+    }
+}
+
+finalScore();
+
+console.log(`Your Score: ${playerScore}`);
+console.log(`Computer's Score: ${computerScore}`);
