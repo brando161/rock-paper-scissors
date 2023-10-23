@@ -36,7 +36,7 @@ const game = () => {
             }
         }
 
-        const playerChoice = prompt(`Round ${i}: Choose Rock, Paper, or Scissors.`, "");
+        // const playerChoice = prompt(`Round ${i}: Choose Rock, Paper, or Scissors.`, "");
         const playerSelection = playerChoice.toUpperCase();
         const computerSelection = getComputerChoice().toUpperCase();
     

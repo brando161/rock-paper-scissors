@@ -1,0 +1,46 @@
+body {
+    height: 100%;
+    width: 100%;
+    background-color: #9f9f9f;
+}
+
+h1, 
+div {
+    font-family: 'M PLUS Code Latin', monospace;
+    font-weight: bolder;
+    text-align: center;
+}
+
+h1 {
+    font-size: 75px;
+}
+
+div {
+    font-size: 50px;
+    padding-top: 100px;
+    padding-bottom: 20px;
+}
+
+ul {
+    list-style: none;
+}
+
+.rps-buttons {
+    padding: 0 5px;
+    display: flex;
+    justify-content: space-around;
+}
+
+button {
+    height: 250px;
+    width: 250px;
+    border: 5px solid #000000;
+    border-radius: 20px;
+}
+
+img {
+    height: 150px;
+    width: 150px;
+}
+
+
