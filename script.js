@@ -47,32 +47,35 @@ const playRound = (playerSelection, computerSelection) => {
 
 rock.addEventListener("click", function() {
     const computerSelection = getComputerChoice();
-    playRound("ROCK", computerSelection);
+    const result = playRound("ROCK", computerSelection);
+    console.log(result);
     console.log(`You chose ROCK and the computer chose ${computerSelection}.`);
-    // finalScore();
+    finalScore();
 });
 paper.addEventListener("click", function() {
     const computerSelection = getComputerChoice();
-    playRound("PAPER", computerSelection);
+    const result = playRound("PAPER", computerSelection);
+    console.log(result);
     console.log(`You chose PAPER and the computer chose ${computerSelection}.`);
-    // finalScore();
+    finalScore();
 });
 scissors.addEventListener("click", function() {
     const computerSelection = getComputerChoice();
-    playRound("SCISSORS", computerSelection);
+    const result = playRound("SCISSORS", computerSelection);
+    console.log(result);
     console.log(`You chose SCISSORS and the computer chose ${computerSelection}.`);
-    // finalScore();
+    finalScore();
 });
 
-// const finalScore = () => {
-//     console.log(`Your Score: ${playerScore}`);
-//     console.log(`Computer's Score: ${computerScore}`);
+const finalScore = () => {
+    console.log(`Your Score: ${playerScore}`);
+    console.log(`Computer's Score: ${computerScore}`);
 
-//     if(playerScore > computerScore) {
-//         alert(`Congratulations, you won the game! Your score was ${playerScore} and the computer's score was ${computerScore}`);
-//     } else if(playerScore === computerScore) {
-//         alert(`It's a tied game! Both scores were ${playerScore}`);
-//     } else {
-//         alert(`You lost the game! Your score was ${playerScore} and the computer's score was ${computerScore}`);
-//     }
-// };
+    // if(playerScore > computerScore) {
+    //     alert(`Congratulations, you won the game! Your score was ${playerScore} and the computer's score was ${computerScore}`);
+    // } else if(playerScore === computerScore) {
+    //     alert(`It's a tied game! Both scores were ${playerScore}`);
+    // } else {
+    //     alert(`You lost the game! Your score was ${playerScore} and the computer's score was ${computerScore}`);
+    // }
+};
