@@ -19,6 +19,7 @@ h1 {
     font-size: 50px;
     padding-top: 100px;
     padding-bottom: 20px;
+    text-align: center;
 }
 
 ul {
@@ -26,7 +27,7 @@ ul {
 }
 
 .rps-buttons {
-    padding: 0 5px;
+    padding: 0;
     display: flex;
     justify-content: space-around;
 }
@@ -43,6 +44,11 @@ img {
     width: 150px;
 }
 
+#resultText,
+#scoreText {
+    font-size: 32px;
+    padding-top: 20px;
+}
 
 
 
