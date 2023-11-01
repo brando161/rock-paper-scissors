@@ -10,7 +10,6 @@ const buttons = document.querySelectorAll("button");
 const resultText = document.getElementById("resultText");
 const score1 = document.getElementById("score1");
 const score2 = document.getElementById("score2");
-const finalText = document.getElementById("finalText");
 
 const disableButtons = () => {
     buttons.forEach(button => {
@@ -90,10 +89,10 @@ const finalScore = () => {
 
 const checkGameResult = () => {
     if (playerScore === winningScore) {
-        finalText.textContent = "Congratulations, you won the game! Refresh page to play again.";
+        resultText.textContent = "Congratulations, you won the game! Refresh page to play again.";
         disableButtons();
     } else if (computerScore === winningScore) {
-        finalText.textContent = "Sorry, you lost the game! Refresh page to try again.";
+        resultText.textContent = "Sorry, you lost the game! Refresh page to try again.";
         disableButtons();
     }
 };
